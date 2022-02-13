@@ -35,7 +35,7 @@ namespace QAOnPoint
         [Test]
         public void TestMethod()
         {
-        //https://abstracta.us
+        
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://statsroyale.com/");
             Driver.FindElement(By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']")).Click();
