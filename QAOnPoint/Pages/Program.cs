@@ -44,7 +44,8 @@ namespace QAOnPoint
 
            var iceSpirit = Driver.FindElement(By.CssSelector("a[href*='Ice+Spirit']"));
            Assert.True(iceSpirit.Displayed);
-
+            iceSpirit.Click();
+            Thread.Sleep(5000);
         }
     }
 }
