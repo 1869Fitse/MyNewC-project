@@ -25,6 +25,7 @@ namespace QAOnPoint
             
         }
 
+        //This is tearDown method
         [TearDown]
         public void Cleanup()
         {
