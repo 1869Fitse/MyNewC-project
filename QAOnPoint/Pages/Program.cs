@@ -41,19 +41,19 @@ namespace QAOnPoint
         
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://statsroyale.com/");
+            IWebElement card = Driver.FindElement(By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']"));
+            waitForElementAndClick(Driver, By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']"),5, card);
 
-            waitForElement(Driver, By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']") ,5);
-
-            Driver.FindElement(By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']")).Click();
             var iceSpirit = Driver.FindElement(By.CssSelector("a[href*='Ice+Spirit']"));
-            Assert.True(iceSpirit.Displayed);
-            iceSpirit.Click();
+            waitForElementAndClick(Driver, By.CssSelector("a[href*='Ice+Spirit']"), 5, iceSpirit);
+            Thread.Sleep(5000);
         }
-
-        public void waitForElement(IWebDriver Driver,By element,int timewait) {
+        
+        public void waitForElementAndClick(IWebDriver Driver,By element,int timewait, IWebElement webElement) {
 
             wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timewait));
             wait.Until(e => e.FindElement(element));
+            webElement.Click();
                         
         }
     }
