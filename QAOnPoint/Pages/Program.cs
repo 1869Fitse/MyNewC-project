@@ -40,13 +40,12 @@ namespace QAOnPoint
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://statsroyale.com/");
             Driver.FindElement(By.XPath("//a[@class= 'ui__link ui__whiteText ui__mediumText footer__link' and text()= 'Cards']")).Click();
-            Thread.Sleep(5000);
-
-           var iceSpirit = Driver.FindElement(By.CssSelector("a[href*='Ice+Spirit']"));
-           Assert.True(iceSpirit.Displayed);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            var iceSpirit = Driver.FindElement(By.CssSelector("a[href*='Ice+Spirit']"));
+            Assert.True(iceSpirit.Displayed);
             iceSpirit.Click();
             //Added thread.sleep for 5 minutes delay time
-            Thread.Sleep(5000);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
     }
 }
