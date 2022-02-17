@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <None Remove="Driver\" />
-    <None Remove="PageObjects\" />
     <None Remove="Selenium.WebDriver" />
     <None Remove="Selenium.Support" />
     <None Remove="Selenium.WebDriver.ChromeDriver" />
@@ -29,7 +28,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Driver\" />
-    <Folder Include="PageObjects\" />
     <Folder Include="Pages\" />
   </ItemGroup>
 </Project>
